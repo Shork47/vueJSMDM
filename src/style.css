@@ -1,0 +1,12 @@
+body{
+    font-family: Arial, serif;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.p-inputtext {
+    margin-right: 8px;
+}

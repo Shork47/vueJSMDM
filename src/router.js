@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/components/Home.vue';
-import Dishes from  '@/components/Dishes.vue';
+// import Dishes from  '@/components/Dishes.vue';
 import Categories from '@/components/Categories.vue';
 const routes = [
   {
@@ -11,10 +11,10 @@ const routes = [
     path: '/category',
     component: Categories,
   },
-  {
-    path: '/dish',
-    component: Dishes,
-  },
+  // {
+  //   path: '/dish',
+  //   component: Dishes,
+  // },
 ];
 const router = createRouter({
   history: createWebHistory(),
