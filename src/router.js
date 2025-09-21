@@ -1,11 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/components/Home.vue';
-// import Dishes from  '@/components/Dishes.vue';
 import Categories from '@/components/Categories.vue';
+import Dishes from '@/components/Dishes.vue'
 const routes = [
   {
     path: '/',
-    component: Home,
+    component: Dishes,
   },
   {
     path: '/category',
