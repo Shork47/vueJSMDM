@@ -20,10 +20,11 @@
 <script>
 import DataTable from 'primevue/datatable'
 import Column from 'primevue/column'
+import Button from 'primevue/button'
 import { useDataStore } from '@/stores/dataStore'
 export default {
   name: 'Dishes',
-  components: { DataTable, Column },
+  components: { DataTable, Column, Button },
   data() {
     return {
       dataStore: useDataStore(),

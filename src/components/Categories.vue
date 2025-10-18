@@ -14,6 +14,22 @@
   >
     <Column field="id" header="№" />
     <Column field="name" header="Наименование" />
+    <Column header="Фото">
+      <template #body="slotProps">
+        <img
+          :src="slotProps.data.photo_path"
+          alt="Фото категории"
+          width="100"
+          height="100"
+          style="object-fit: cover; border-radius: 8px;"
+        />
+      </template>
+    </Column>
+    <template #footer v-if="authStore.isAuthenticated">
+      <div class="text-end">
+        <Button type="button" @click="this.$router.push('/createCategory')" icon="pi pi-plus" label="Добавить категорию" />
+      </div>
+    </template>
   </DataTable>
 </template>
 
@@ -21,12 +37,15 @@
 import DataTable from 'primevue/datatable'
 import Column from 'primevue/column'
 import { useDataStore } from '@/stores/dataStore'
+import Button from 'primevue/button'
+import { useAuthStore } from '@/stores/authStore.js'
 export default {
   name: 'Categories',
-  components: { DataTable, Column },
+  components: { DataTable, Column, Button },
   data() {
     return {
       dataStore: useDataStore(),
+      authStore: useAuthStore(),
       perpage: 5,
       offset: 0,
     }
@@ -46,6 +65,7 @@ export default {
     console.log('Categories=', this.categories);
   },
   methods: {
+    useAuthStore,
     onPageChange(event) {
       this.offset = event.first;
       this.perpage = event.rows;
